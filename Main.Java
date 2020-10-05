@@ -6,12 +6,22 @@ public class Main{
     
     public static void main(String[] args) {
 
-        Dininig dining;
-		
-		dinner = new SemaphoreSolve(PHILOSOPHERS_NUMBER);
-		
-		for (int i = 0; i < PHILOSOPHERS_NUMBER; i++) {
-			new Philosopher(i, PHILOSOPHERS_EATING_DURATION, PHILOSOPHERS_THINKING_DURATION, dinner);
+        ininig dinnerSemaphore;
+        Dininig dinnerMonitor;
+        
+
+        dinnerSemaphore = new SemaphoreSolve(PHILOSOPHERS_NUMBER);
+        
+        for (int i = 0; i < PHILOSOPHERS_NUMBER; i++) {
+            new Philosopher(i, PHILOSOPHERS_EATING_DURATION, PHILOSOPHERS_THINKING_DURATION, dinnerSemaphore);
         }
+
+
+        dinnerMonitor = new MonitorSolve(PHILOSOPHERS_NUMBER);
+
+        for (int i = 0; i < PHILOSOPHERS_NUMBER; i++) {
+            new Philosopher(i, PHILOSOPHERS_EATING_DURATION, PHILOSOPHERS_THINKING_DURATION, dinnerMonitor);
+        }
+        
     }
 }
